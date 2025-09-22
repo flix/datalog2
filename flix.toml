@@ -1,0 +1,6 @@
+[package]
+name        = "datalog2"
+description = "Datalog Engine Version 2"
+version     = "1.0.0"
+flix        = "0.63.1"
+authors     = ["John Doe <john@example.com>"]
