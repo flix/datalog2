@@ -67,7 +67,12 @@ mod Fixpoint.Solver {
             }
             case Model(_) => d
             case Join(Model(m), cs) => region rc {
-                let db = Map.map(Map.toMutMap(rc), m) |> Map.toMutMap(rc);
+                let db = MutMap.empty(rc);
+                Map.forEach((k, v) -> {
+                    let innerMap = MutMap.empty(rc);
+                    Map.forEach((k2, v2) -> MutMap.put(k2, v2, innerMap), v);
+                    MutMap.put(k, innerMap, db)
+                }, m);
                 compiler(cs) |> Fixpoint.Interpreter.interpretWithDatabase(rc, db) |> toModel
             }
             case _ => bug!("Datalog normalization bug")
