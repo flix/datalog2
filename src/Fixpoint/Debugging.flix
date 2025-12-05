@@ -25,7 +25,6 @@ mod Fixpoint.Debugging {
     ///
     /// Note: Returns `d` to ensure it is not erased.
     ///
-    @Internal
     pub def notifyPreSolve(d: Datalog): Datalog = unchecked_cast({
         if (Fixpoint.Options.enableDebugging()) {
             println(String.repeat(80, "*"));
@@ -45,7 +44,6 @@ mod Fixpoint.Debugging {
     ///
     /// Note: Returns `d` to ensure it is not erased.
     ///
-    @Internal
     pub def notifyPostSolve(d: Datalog): Datalog = unchecked_cast({
         if (Fixpoint.Options.enableDebugging()) {
             println(String.repeat(80, "*"));
@@ -65,7 +63,6 @@ mod Fixpoint.Debugging {
     ///
     /// Note: Returns `s` to ensure it is not erased.
     ///
-    @Internal
     pub def notifyPreInterpret(s: RamStmt): RamStmt = unchecked_cast({
         if (Fixpoint.Options.enableDebugging()) {
             println(String.repeat(80, "*"));

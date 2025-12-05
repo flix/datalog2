@@ -22,7 +22,6 @@ mod Fixpoint.Phase.VarsToIndices {
 
     use Fixpoint.Ast.Ram.{RamStmt, RelOp, RamSym, RamTerm, BoolExp, RowVar}
 
-    @Internal
     pub def lowerStmt(stmt: RamStmt): RamStmt = match stmt {
         case RamStmt.Insert(op) => RamStmt.Insert(lowerOp(op, Map#{}, 0))
         case RamStmt.Merge(_, _) => stmt

@@ -33,7 +33,6 @@ mod Fixpoint.Phase.Simplifier {
     ///         end
     ///     end
     ///
-    @Internal
     pub def simplifyStmt(stmt: RamStmt): RamStmt =
         Option.getWithDefault(RamStmt.Seq(Vector#{}), simplifyHelper(Set#{}, stmt))
 

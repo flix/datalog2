@@ -24,11 +24,9 @@ mod Fixpoint.Interpreter {
 
     pub type alias SearchEnv[r: Region] = (Array[Vector[Boxed], r], Array[Boxed, r])
 
-    @Internal
     pub def interpret(rc: Region[r], stmt: RamStmt): Database[r] \ r =
         interpretWithDatabase(rc, MutMap.empty(rc), stmt)
 
-    @Internal
     pub def interpretWithDatabase(rc: Region[r], db: Database[r], stmt: RamStmt): Database[r] \ r =
         let s = Fixpoint.Debugging.notifyPreInterpret(stmt);
         evalStmt(rc, db, s);

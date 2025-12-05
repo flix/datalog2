@@ -37,7 +37,6 @@ mod Fixpoint.Phase.Compiler {
     /// This means to compile all rules in stratum 0, then stratum 1 and so on.
     /// A rule belongs to the same stratum as its head predicate.
     ///
-    @Internal
     pub def compile(d: Datalog, strat: Map[PredSym, Int32]): RamStmt = match d {
         case Datalog(facts, rules) => region rc {
             let stmts = MutList.empty(rc);

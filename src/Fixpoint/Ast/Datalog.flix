@@ -30,7 +30,6 @@ mod Fixpoint.Ast.Datalog {
     // Datalog                                                                 //
     /////////////////////////////////////////////////////////////////////////////
 
-    @Internal
     pub enum Datalog {
         case Datalog(Vector[Constraint], Vector[Constraint])
         case Model(Map[RamSym, Map[Vector[Boxed], Boxed]])
@@ -96,7 +95,6 @@ mod Fixpoint.Ast.Datalog {
     // Constraint                                                              //
     /////////////////////////////////////////////////////////////////////////////
 
-    @Internal
     pub enum Constraint {
         case Constraint(HeadPredicate, Vector[BodyPredicate])
     }
@@ -134,7 +132,6 @@ mod Fixpoint.Ast.Datalog {
     // HeadPredicate                                                           //
     /////////////////////////////////////////////////////////////////////////////
 
-    @Internal
     pub enum HeadPredicate {
         case HeadAtom(PredSym, Denotation, Vector[HeadTerm])
     }
@@ -170,7 +167,6 @@ mod Fixpoint.Ast.Datalog {
     // BodyPredicate                                                           //
     /////////////////////////////////////////////////////////////////////////////
 
-    @Internal
     pub enum BodyPredicate {
         case BodyAtom(PredSym, Denotation, Polarity, Fixity, Vector[BodyTerm])
         case Functional(Vector[VarSym], Vector[Boxed] -> Vector[Vector[Boxed]], Vector[VarSym])
@@ -232,7 +228,6 @@ mod Fixpoint.Ast.Datalog {
     // HeadTerm                                                                //
     /////////////////////////////////////////////////////////////////////////////
 
-    @Internal
     pub enum HeadTerm {
         case Var(VarSym)
         case Lit(Boxed)
@@ -261,7 +256,6 @@ mod Fixpoint.Ast.Datalog {
     // BodyTerm                                                                //
     /////////////////////////////////////////////////////////////////////////////
 
-    @Internal
     pub enum BodyTerm {
         case Wild
         case Var(VarSym)
@@ -280,7 +274,6 @@ mod Fixpoint.Ast.Datalog {
     // VarSym                                                                  //
     /////////////////////////////////////////////////////////////////////////////
 
-    @Internal
     pub enum VarSym with Eq, Order, ToString {
         case VarSym(String)
     }
@@ -289,7 +282,6 @@ mod Fixpoint.Ast.Datalog {
     // Fixity                                                                  //
     /////////////////////////////////////////////////////////////////////////////
 
-    @Internal
     pub enum Fixity {
         case Loose,
         case Fixed
@@ -299,7 +291,6 @@ mod Fixpoint.Ast.Datalog {
     // Polarity                                                                //
     /////////////////////////////////////////////////////////////////////////////
 
-    @Internal
     pub enum Polarity {
         case Positive,
         case Negative

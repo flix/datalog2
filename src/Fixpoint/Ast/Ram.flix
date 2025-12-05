@@ -26,7 +26,6 @@ mod Fixpoint.Ast.Ram {
     // RamStmt                                                                 //
     /////////////////////////////////////////////////////////////////////////////
 
-    @Internal
     pub enum RamStmt {
         case Insert(RelOp)
         case Merge(RamSym, RamSym)
@@ -57,7 +56,6 @@ mod Fixpoint.Ast.Ram {
     // RelOp                                                                   //
     /////////////////////////////////////////////////////////////////////////////
 
-    @Internal
     pub enum RelOp {
         case Search(RowVar, RamSym, RelOp)
         case Query(RowVar, RamSym, Vector[(Int32, RamTerm)], RelOp)
@@ -91,7 +89,6 @@ mod Fixpoint.Ast.Ram {
     // BoolExp                                                                 //
     /////////////////////////////////////////////////////////////////////////////
 
-    @Internal
     pub enum BoolExp {
         case Empty(RamSym)
         case NotMemberOf(Vector[RamTerm], RamSym)
@@ -134,7 +131,6 @@ mod Fixpoint.Ast.Ram {
     /// `LoadLatVar(x)` represents the lattice component in the tuple
     /// bound to the local variable `x`.
     ///
-    @Internal
     pub enum RamTerm {
         case Lit(Boxed)
         case RowLoad(RowVar, Int32)
@@ -167,7 +163,6 @@ mod Fixpoint.Ast.Ram {
     // RamSym                                                                  //
     /////////////////////////////////////////////////////////////////////////////
 
-    @Internal
     pub enum RamSym {
         case Full(PredSym, Int32, Denotation)
         case Delta(PredSym, Int32, Denotation)
@@ -233,14 +228,12 @@ mod Fixpoint.Ast.Ram {
         }
     }
 
-    @Internal
     pub def arityOf(ramSym: RamSym): Int32 = match ramSym {
         case RamSym.Full(_, arity, _) => arity
         case RamSym.Delta(_, arity, _) => arity
         case RamSym.New(_, arity, _) => arity
     }
 
-    @Internal
     pub def toDenotation(ramSym: RamSym): Denotation = match ramSym {
         case RamSym.Full(_, _, den) => den
         case RamSym.Delta(_, _, den) => den
@@ -251,7 +244,6 @@ mod Fixpoint.Ast.Ram {
     // RowVar                                                                  //
     /////////////////////////////////////////////////////////////////////////////
 
-    @Internal
     pub enum RowVar with Eq {
         case Named(String)
         case Index(Int32)

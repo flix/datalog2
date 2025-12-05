@@ -32,7 +32,6 @@ mod Fixpoint.Phase.Stratifier {
     /// Initially, all IDB predicates are assigned to stratum 0.
     /// I.e. facts are ignored in the stratification.
     ///
-    @Internal
     pub def stratify(d: Datalog): Map[PredSym, Int32] = {
         let graph = mkDepGraph(d);
         stratifyHelper(graph, Map.empty())
