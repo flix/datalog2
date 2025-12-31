@@ -140,7 +140,7 @@ mod Fixpoint.Phase.IndexSelection {
             case _ => ???
         }, varQuery) |>
         // Group `var[i] = rhs` by `i`.
-        Vector.groupBy(x -> y -> match (x, y) {
+        Vector.groupWith(x -> y -> match (x, y) {
             case (Eq(RowLoad(_, index1), _), Eq(RowLoad(_, index2), _)) => index1 == index2
             case _ => ???
         }) |>
