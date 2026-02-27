@@ -680,7 +680,6 @@ mod Fixpoint.Solver {
                         let vs = Vector.map(headTermValue, terms);
                         MutList.push(f(Vector.toList(vs)), pFacts)
                     else ()
-                case _ => ()
             }, cs);
             pFacts |> MutList.toVector
         }
