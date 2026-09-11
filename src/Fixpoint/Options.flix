@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-mod Fixpoint.Options {
+pub mod Fixpoint.Options {
 
     ///
     /// Prints the Datalog program before the fixpoint computation.

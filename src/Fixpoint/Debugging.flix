@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-mod Fixpoint.Debugging {
+pub mod Fixpoint.Debugging {
 
     use Fixpoint.Ast.Datalog.Datalog
     use Fixpoint.Ast.Ram.RamStmt

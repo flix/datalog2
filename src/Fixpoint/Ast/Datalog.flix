@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-mod Fixpoint.Ast.Datalog {
+pub mod Fixpoint.Ast.Datalog {
 
     use Fixpoint.PredSymsOf
     use Fixpoint.PredSymsOf.predSymsOf

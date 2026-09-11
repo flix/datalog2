@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-mod Fixpoint.Ast.Shared {
+pub mod Fixpoint.Ast.Shared {
 
     use Fixpoint.Boxable
     use Fixpoint.Boxed

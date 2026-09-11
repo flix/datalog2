@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-mod Fixpoint.Phase.Compiler {
+pub mod Fixpoint.Phase.Compiler {
 
     use Fixpoint.Ast.Ram.{RamStmt, RelOp, RamSym, RamTerm, BoolExp, RowVar}
     use Fixpoint.Ast.Datalog.{Datalog, Constraint, BodyPredicate, BodyTerm, HeadTerm, Polarity, VarSym}

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-mod Fixpoint.Ast {
+pub mod Fixpoint.Ast {
 
     use Fixpoint.Ast.Shared.PredSym
 
