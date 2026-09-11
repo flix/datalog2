@@ -14,7 +14,7 @@
  *  limitations under the License.
  */
 
-mod Fixpoint.Boxed {
+pub mod Fixpoint.Boxed {
 
     import java.lang.Object
 

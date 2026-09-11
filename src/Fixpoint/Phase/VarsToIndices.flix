@@ -18,7 +18,7 @@
 /// This implies substituting named references to row variables with indices
 /// in where clauses, range queries and project operations.
 
-mod Fixpoint.Phase.VarsToIndices {
+pub mod Fixpoint.Phase.VarsToIndices {
 
     use Fixpoint.Ast.Ram.{RamStmt, RelOp, RamSym, RamTerm, BoolExp, RowVar}
 

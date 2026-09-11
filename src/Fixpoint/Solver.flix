@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-mod Fixpoint.Solver {
+pub mod Fixpoint.Solver {
 
     import dev.flix.runtime.Global
 

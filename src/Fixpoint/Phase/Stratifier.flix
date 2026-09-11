@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-mod Fixpoint.Phase.Stratifier {
+pub mod Fixpoint.Phase.Stratifier {
 
     use Fixpoint.Ast.Datalog.{Datalog, Constraint, HeadPredicate, BodyPredicate, Polarity, Fixity}
     use Fixpoint.Ast.Datalog.Datalog.{Datalog, Model, Join}
