@@ -16,7 +16,7 @@
 
 pub mod Fixpoint.Solver {
 
-    import dev.flix.runtime.Global
+    import dev.flix.runtime.Host
 
     use Fixpoint.Ast.Datalog.{Datalog, Constraint, HeadTerm}
     use Fixpoint.Ast.Datalog.Datalog.{Datalog, Model, Join}
@@ -140,7 +140,7 @@ pub mod Fixpoint.Solver {
             } else {
                 // Case 2: Introduce a fresh name (index) for the predicate symbol.
                 let PredSym(name, _) = predSym;
-                let nextId = unchecked_cast((Global.newId() + 1i64) as _ \ {});  // We add one because the counter starts at zero.
+                let nextId = unchecked_cast((Host.newId() + 1i64) as _ \ {});  // We add one because the counter starts at zero.
                 let newPredSym = PredSym(name, nextId);
                 Map.insert(predSym, newPredSym, macc)
             }
